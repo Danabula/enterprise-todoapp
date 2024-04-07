@@ -81,3 +81,98 @@
 	</form>
 </div>
 
+<style>
+	:root {
+		background-color: rgb(186, 186, 186);
+	}
+	:global(body) {
+		padding: 0;
+		margin: 0;
+		/* background-color: gainsboro; */
+		/* background-image: url('/paper.jpg'); */
+		background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0 100%), url('/paper.jpg');
+		/* background-image: url('/favicon.png'); */
+		background-repeat: repeat;
+	}
+	.todo-app {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.todo-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.todo-item {
+		display: block;
+		border: black 1px solid;
+		box-shadow: gray 4px 4px 4px;
+		padding: 5px 7px;
+		width: 700px;
+		height: 90px;
+		margin: 22px;
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	.divider {
+		display: flex;
+	}
+	.divy {
+		display: flex;
+		align-items: center;
+	}
+	/* Hide browser checkbox */
+	.checkmark {
+		appearance: none;
+		background-color: transparent;
+		margin: 0;
+		width: 2em;
+		height: 2em;
+		border: 1px black solid;
+		margin: 20px;
+	}
+	.checkmark:after {
+		content: '';
+		position: absolute;
+		display: block;
+		font-size: 4em;
+		transform: scale(0);
+		opacity: 0;
+		transform-origin: 0 0;
+		transition:
+			200ms transform ease,
+			1s opacity ease;
+	}
+	.checkmark:checked:after {
+		content: '\2714';
+		color: green;
+		opacity: 1;
+		transform: scale(1) translateX(-0.1em) translateY(-0.5em);
+	}
+	.todo-title {
+		font-size: 2em;
+		text-decoration: underline;
+		margin: 10px;
+	}
+	.todo-description {
+		font-size: 1.3em;
+		margin: 10px;
+	}
+	button.delete-btn {
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		background-color: transparent;
+		color: brown;
+		border: none;
+	}
+	form.create-todo {
+		margin-top: 33px;
+		margin-bottom: 10em;
+		border: black 1px solid;
+		box-shadow: gray 4px 4px 4px;
+		background-color: rgba(255, 255, 255, 0.2);
+		padding: 1em 2em;
+	}
+</style>
