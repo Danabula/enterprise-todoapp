@@ -32,3 +32,6 @@ npx prisma db push
 
 to sync the prisma schema to the database.
 
+## Docker research case example
+
+This docker setup serves as the bad example for the docker research case users to improve upon.
