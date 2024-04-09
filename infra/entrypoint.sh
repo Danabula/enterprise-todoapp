@@ -25,12 +25,9 @@ EOF
 mysqld --user mariadb --bind-address=0.0.0.0 --port=3306 --skip-networking=0 &
 sleep 1
 
-# fix node package permissions
-find /project/node_modules -type f -exec chmod +x {} +
-
 # create the database
-cd /project && npx prisma db push
+cd /project && sudo -E -u node npx prisma db push
 
 # start the webserver
 echo "server args: " "$@"
-cd /project && exec npm run dev "$@"
+cd /project && exec sudo -E -u node npm run dev "$@"
